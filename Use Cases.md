@@ -7,3 +7,4 @@
 | **Integrate and configure external systems with the chatbot<br>** | System administrators can manage external system integration, as well as establish global policies related to data retention.                                                                                                                                                  |
 | **Monitor and maintain system health<br>**                        | System maintainer updates the chatbot system using a pipeline system to ensure zero downtime within the system. The system maintainer can then view monitoring dashboards to ensure the system is healthy with the new software<br>                                            |
 
+<img width="978" height="761" alt="image" src="https://github.com/user-attachments/assets/a1f4bbe3-a44a-4c5b-8792-f71063dcd5d4" />
