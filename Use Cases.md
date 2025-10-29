@@ -7,3 +7,5 @@
 |UC-4 | **View personalized analytical statistics**                       | - The student or lecturer requests dashboard statistics, which the system provides based on their role<br>    <br>- Students get student-based information such as performance indicators<br>    <br>- Lecturers get lecturer-appropriate information such as class engagement |
 |UC-5 | **Integrate and configure external systems with the chatbot<br>** | System administrators can manage external system integration, as well as establish global policies related to data retention.                                                                                                                                                  |
 |UC-6 | **Monitor and maintain system health<br>**                        | System maintainer updates the chatbot system using a pipeline system to ensure zero downtime within the system. The system maintainer can then view monitoring dashboards to ensure the system is healthy with the new software<br>                                            |
+
+<img width="974" height="760" alt="image" src="https://github.com/user-attachments/assets/da42e94c-d6f6-488b-aec9-614f7e8c7b11" />
