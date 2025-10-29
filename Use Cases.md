@@ -8,4 +8,4 @@
 |UC-5 | **Integrate and configure external systems<br>** | System administrators manage external system integration, as well as establish global policies related to data retention.                                                                                                                                                  |
 |UC-6 | **Monitor and maintain system health<br>**                        | System maintainer updates the chatbot system using a pipeline system to ensure zero downtime within the system. The system maintainer can then view monitoring dashboards to ensure the system is healthy with the new software<br>                                            |
 
-<img width="961" height="744" alt="image" src="https://github.com/user-attachments/assets/b146d1d8-7a78-417b-937e-d392e81ea60d" />
+<img width="953" height="754" alt="image" src="https://github.com/user-attachments/assets/4fcd2901-d93a-439e-bad6-5988f069ff46" />
