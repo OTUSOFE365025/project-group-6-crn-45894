@@ -204,3 +204,62 @@ Use the Spring framework to build the modules so that they have an easier time c
 | **University Database**    | Institutional systems holding academic data accessible by the University Integration Adapter. |
 | **Notification Queue/Scheduler** | Stores pending notifications with scheduled delivery times. |
 
+## Step 7: Analyze Current Design and Review Iteration Goal and Design Objectives
+
+The main focus for iteration two was building the support structures for the application, based on the prioritized drivers. This focus was accomplished by extracting components that shaped the modules from the use cases. We were also able to fully address all the prioritized drivers stated for iteration two.
+
+### Driver Progress Tables
+
+**Legend:**
+
+- 🟥 – Not Addressed  
+- 🟨 – Partially Addressed  
+- 🟩 – Addressed  
+
+---
+
+### Use Cases
+
+| ID   | Status | Decisions / Rationale | Planned For |
+|------|--------|------------------------|-------------|
+| **UC-1** | 🟩 | Implemented via a Conversation Service as well as a database and a data access layer. | IT 1 & IT 2 |
+| **UC-2** | 🟩 | Notification system implemented via a Notification Service. | IT 2 |
+| **UC-3** | 🟩 | File uploading has been implemented via a Content Management Service. | IT 2 |
+| **UC-4** | 🟥 | Analytics service has not been implemented yet. Deferred to iteration 3. | IT 3 |
+| **UC-5** | 🟩 | The integration service adapts external services such as the university LMS APIs. This is done via a University Integration Adapter. | IT 2 |
+| **UC-6** | 🟨 | Service Registry does have health checks to manage load on the system but a dedicated dashboard is not yet implemented. Deferred to iteration 3. | IT 3 |
+
+---
+
+### Quality Scenarios
+
+| ID   | Status | Rationale / Next Steps | Planned For |
+|------|--------|------------------------|-------------|
+| **QA-1: Performance** | 🟩 | We have horizontal scaling with microservices, load balancing (Service Registry), and caching (Cached Storage), as well as different storages (cache, Chatbot DB, University DB). | IT 1 |
+| **QA-2: Security** | 🟩 | Gateway tier handles authentication and has role-based services and policies. | IT 2 |
+| **QA-3: Modifiability** | 🟩 | The University Integration Service is an adapter isolating the system from LMS changes. | IT 1 |
+| **QA-4: Reliability** | 🟩 | Notifications have been implemented via a Notification Service that allows for resending if necessary. | IT 2 |
+| **QA-5: Availability** | 🟩 | The Service Registry and stateless property of microservices allow for the system to recover in case of a service or node crash. | IT 1 |
+
+---
+
+### System Constraints
+
+| ID     | Status | Rationale / Next Steps | Planned For |
+|--------|--------|------------------------|-------------|
+| **CON-1** | 🟩 | Microservice architecture allows only the chatbot service to scale as needed under heavy load. | IT 1 |
+| **CON-2** | 🟩 | API Gateway and the standard usage of REST and JSON in interfaces ensure interoperability. | IT 1 |
+| **CON-3** | 🟩 | Both the Client Application and API Gateway are designed to handle mobile/web and/or voice inputs. | IT 1 |
+| **CON-4** | 🟩 | The system is isolated into stateless units that can be added as needed on demand, and is built using web standards. | IT 1 |
+| **CON-5** | 🟩 | Architecture has authentication and privacy policies implemented via an Authorization and Policy Service. | IT 2 |
+
+---
+
+### Architectural Concerns
+
+| ID      | Concern | Status | Rationale / Next Steps | Planned For |
+|---------|---------|--------|------------------------|-------------|
+| **CRN-1: Integration** | Integration | 🟩 | Integration service to adapt the university’s existing systems is in place. | IT 1 |
+| **CRN-2: Low-Level Access Control** | Low-level access control | 🟩 | We have authentication and user-specific data access implemented via a Chatbot Database. This allows the chatbot to access user preferences and data. | IT 2 |
+| **CRN-3: Rate Limitations** | Rate limitations | 🟩 | The chatbot can scale to 5000 users and rate limits are tied to the user’s auth token. | IT 1 |
+| **CRN-4: Data Aggregation** | Data aggregation | 🟨 | We have segregated databases but the balance of cache vs non-cached data isn’t implemented yet. Deferred to iteration 2 or 3. | IT 2 |
