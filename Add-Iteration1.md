@@ -229,7 +229,9 @@ Load balancers distribute requests across several stateless service instances, a
 
 ## Step 6: Sketch Views and Record Design Decisions
 
-### Deployment View
+### Deployment View Diagram
+
+<img width="931" height="820" alt="image" src="https://github.com/user-attachments/assets/f63f4e7b-b585-4236-b253-879f8c38018c" />
 
 | Element                                  | Description |
 |------------------------------------------|-------------|
@@ -246,6 +248,8 @@ Load balancers distribute requests across several stateless service instances, a
 
 ### Architectural Diagram
 
+<img width="952" height="746" alt="image" src="https://github.com/user-attachments/assets/17401ff9-13f5-4952-aa79-e3ba6097bf9a" />
+
 | Element                   | Description |
 |---------------------------|-------------|
 | **User**                  | Student/lecturer interacting with the system through the client application. |
@@ -261,6 +265,8 @@ Load balancers distribute requests across several stateless service instances, a
 ---
 
 ### Logical View Diagram
+
+<img width="497" height="843" alt="image" src="https://github.com/user-attachments/assets/030d4043-c942-40ca-9431-71ec03069fce" />
 
 | Element               | Description |
 |-----------------------|-------------|
