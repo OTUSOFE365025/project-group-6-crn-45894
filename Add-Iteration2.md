@@ -164,6 +164,61 @@ Use the Spring framework to build the modules so that they have an easier time c
 
 ## Step 6: Sketch Views and Record Design Decisions
 
+## Sequence Diagrams (Per Use Case)
+
+### UC-1: Student Queries Chatbot for Information
+
+<img width="1474" height="782" alt="image" src="https://github.com/user-attachments/assets/ea47d023-dfde-4bae-8167-b3433bc92ffb" />
+
+#### Elements
+
+| Element                    | Description |
+|---------------------------|-------------|
+| **Student**               | User that is authorized under the student role. |
+| **Client Application**    | Allows the user to talk with the chatbot and input the user request. |
+| **API Gateway**           | Sends the user’s request to the backend. |
+| **Conversation Service**  | Understands user intent, coordinates with cache and data sources, and prepares the response to return. |
+| **Cached Storage**        | Provides fast access to frequently requested data (e.g., schedules, deadlines) to reduce latency. |
+| **University Integration Adapter** | Retrieves live academic data (courses, schedules, grades, etc.) from university systems for the Conversation Service. |
+| **Chatbot Database**      | Stores conversation history, user preferences, and other chatbot-specific data used to tailor responses. |
+
+---
+
+### UC-2: Chatbot Manages Notifications and Alerts
+
+<img width="1468" height="684" alt="image" src="https://github.com/user-attachments/assets/4b7d04dd-a589-47d1-b9b1-5dc065c18549" />
+
+#### Elements
+
+| Element                     | Description |
+|----------------------------|-------------|
+| **Scheduler**              | Sends a signal to the Notification Service to check for upcoming events. |
+| **Notification Service**   | Gathers data provided by the University Integration Adapter and Chatbot Database, then notifies the user if their preferences are set to receive notifications. |
+| **University Integration Adapter** | Provides the Notification Service with due dates and related academic information. |
+| **Chatbot Database**       | Provides user preferences for notifications (channels, timing, opt-in/opt-out, etc.). |
+| **Notification Queue**     | Sorts notifications in a queue and sends them in a first-in-first-out manner. |
+| **API Gateway**            | Sends the outgoing notification payload to the user’s client. |
+| **Client Application**     | Displays the notification to the user. |
+
+---
+
+### UC-3: Upload, Modify, or Delete Academic Content
+
+<img width="1451" height="627" alt="image" src="https://github.com/user-attachments/assets/e1456166-dad4-4b23-b6da-9ae68eab346d" />
+
+#### Elements
+
+| Element                         | Description |
+|---------------------------------|-------------|
+| **Lecturer**                    | User that is authorized under the lecturer role; uploads and modifies academic content. |
+| **Client Application**          | Web UI that users interact with in order to tell the chatbot what to do (e.g., upload/update content). |
+| **API Gateway**                 | Takes in all user inputs from all input streams and enforces token limits and authentication checks. |
+| **Conversation Service**        | Understands the user’s intent, then coordinates the task (upload/modify/delete) with downstream services. |
+| **Content Management Service**  | Allows the lecturer to upload or modify content if the correct authorization is provided; updates chatbot and LMS data. |
+| **Authorization/Policy Service** | Checks whether a user’s identity and role are allowed to perform the requested content operations; applies institutional policies. |
+| **University Integration Adapter** | Publishes the content specified by the lecturer into the university’s CMS/LMS. |
+| **Chatbot Database**           | Records interactions with the user and logs content operations (uploads/updates/deletes) for audit and tracking. |
+
 ### Architectural Diagram
 
 <img width="1118" height="735" alt="image" src="https://github.com/user-attachments/assets/54f7e4e2-e800-4e2b-9f4b-68c568344e1d" />
