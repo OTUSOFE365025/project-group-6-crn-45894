@@ -161,3 +161,46 @@ Use the Spring framework to build the modules so that they have an easier time c
 | **Notification Queue/Scheduler**      | Sends messages asynchronously; messages are placed into a queue for delivery where messages are for course-related work (project deadlines, quizzes). | QA-4, UC-2 |
 | **Chatbot Database**                  | Holds Chatbot-specific data used in use cases for conversation history, user preferences, notification status, etc.; facilitates reliable recovery and audit. | UC-1, UC-2, UC-3, QA-4 |
 | **University Database**               | Responsible for hosting data required for university operations (grades, schedules); serves as the live data needed for the Chatbot, defines notifications to send and content operations allowed for a user. | CRN-2, UC-1, UC-2, UC-3 |
+
+## Step 6: Sketch Views and Record Design Decisions
+
+### Architectural Diagram
+
+| Element                     | Description |
+|----------------------------|-------------|
+| **User**                   | Student/lecturer interacting with the system through the client app. |
+| **Client Application**     | Front-end application capturing user input, sending chatbot requests to API Gateway, and rendering responses. |
+| **API Gateway**            | Entry point to backend services, routes chat requests to backend services such as the Conversation Service. |
+| **Service Registry**       | Tracks available instances of backend services, used for service discovery and registration. |
+| **Conversation Service**   | Handles student/lecturer queries. |
+| **Notification Service**   | Implements notification logic. |
+| **Content Management Service** | Implements upload/modify/delete of academic content. |
+| **Authorization/Policy Service** | Centralized service evaluating access control rules. |
+| **University Integration (Adapter)** | Communicates with existing university systems, translating requests from backend services into API calls to university systems. |
+| **Cached Storage**         | In-memory store used by the Chatbot to cache frequently accessed data. |
+| **Chatbot Database**       | Chatbot-specific persistent data store. |
+| **University Database**    | Institutional systems holding academic data accessible by the University Integration Adapter. |
+| **Notification Queue/Scheduler** | Stores pending notifications with scheduled delivery times. |
+
+---
+
+### Logical View Diagram
+
+| Element                     | Description |
+|----------------------------|-------------|
+| **Presentation Layer**     | Groups modules related to user interaction – talks to App/Integration layer using HTTP. |
+| **App/Integration Layer**  | Groups modules implementing application logic and integration with other services. |
+| **Data Layer**             | Groups modules related to data access – exposes simple operations to the App/Integration layer. |
+| **Client Application**     | Front-end module rendering chatbot UI, capturing user input, sending HTTP requests to the API Gateway. |
+| **API Gateway**            | Entry point to backend services, routes chat requests to backend services such as the Conversation Service. |
+| **Service Registry**       | Tracks available instances of backend services, used for service discovery and registration. |
+| **Conversation Service**   | Handles student/lecturer queries. |
+| **Notification Service**   | Implements notification logic. |
+| **Content Management Service** | Implements upload/modify/delete of academic content. |
+| **Authorization/Policy Service** | Centralized service evaluating access control rules. |
+| **University Integration (Adapter)** | Communicates with existing university systems, translating requests from backend services into API calls to university systems. |
+| **Cached Storage**         | In-memory store used by the Chatbot to cache frequently accessed data. |
+| **Chatbot Database**       | Chatbot-specific persistent data store. |
+| **University Database**    | Institutional systems holding academic data accessible by the University Integration Adapter. |
+| **Notification Queue/Scheduler** | Stores pending notifications with scheduled delivery times. |
+
