@@ -166,6 +166,8 @@ Use the Spring framework to build the modules so that they have an easier time c
 
 ### Architectural Diagram
 
+<img width="1118" height="735" alt="image" src="https://github.com/user-attachments/assets/54f7e4e2-e800-4e2b-9f4b-68c568344e1d" />
+
 | Element                     | Description |
 |----------------------------|-------------|
 | **User**                   | Student/lecturer interacting with the system through the client app. |
@@ -185,6 +187,8 @@ Use the Spring framework to build the modules so that they have an easier time c
 ---
 
 ### Logical View Diagram
+
+<img width="491" height="844" alt="image" src="https://github.com/user-attachments/assets/b4b33a09-3669-4238-84e5-e04cbc6c28fe" />
 
 | Element                     | Description |
 |----------------------------|-------------|
