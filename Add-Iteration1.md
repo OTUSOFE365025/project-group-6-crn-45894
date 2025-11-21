@@ -248,7 +248,7 @@ Load balancers distribute requests across several stateless service instances, a
 
 ### Architectural Diagram
 
-<img width="960" height="786" alt="image" src="https://github.com/user-attachments/assets/4ae00c07-6992-4059-a1d8-b7b1848b881d" />
+<img width="952" height="746" alt="image" src="https://github.com/user-attachments/assets/17401ff9-13f5-4952-aa79-e3ba6097bf9a" />
 
 | Element                   | Description |
 |---------------------------|-------------|
