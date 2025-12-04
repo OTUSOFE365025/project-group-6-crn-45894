@@ -173,7 +173,7 @@ This will enable the development of components that will manifest the desired qu
 
 #### Deployment Diagram
 
-*(Deployment diagram image omitted in Markdown version.)*
+<img width="1146" height="782" alt="image" src="https://github.com/user-attachments/assets/3886185c-44d9-4658-aaef-f1853fe5895f" />
 
 | Element | Description |
 | --- | --- |
@@ -204,6 +204,8 @@ This will enable the development of components that will manifest the desired qu
 
 #### UC-4: View Personalized Analytical Statistics
 
+<img width="1139" height="574" alt="image" src="https://github.com/user-attachments/assets/f7ec6a86-4e07-484f-a32c-60490f0e7133" />
+
 | Element | Description |
 | --- | --- |
 | **Student** | Requests personalized analytics dashboard for a course. |
@@ -222,7 +224,7 @@ This will enable the development of components that will manifest the desired qu
 
 #### UC-6: Monitor and Maintain System Health (Zero-downtime Deployment)
 
-*(Sequence diagram image omitted in Markdown version.)*
+<img width="1147" height="823" alt="image" src="https://github.com/user-attachments/assets/ff18c69d-284b-462b-85fa-be6b320b864e" />
 
 | Element | Description |
 | --- | --- |
@@ -353,3 +355,5 @@ To meet our goal of zero-downtime deployment we have accepted the required archi
 
 - **Centralised Visibility:**  
   For a unified view of the system health we implemented centralized monitoring. However, this creates a dependency on the monitoring service. To address this we have redundancy in place.
+
+  <img width="1145" height="549" alt="image" src="https://github.com/user-attachments/assets/32c3cf54-f4c5-456e-a807-d56d79e7a57a" />
